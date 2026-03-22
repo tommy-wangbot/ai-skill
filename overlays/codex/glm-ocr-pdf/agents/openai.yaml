@@ -1,0 +1,6 @@
+interface:
+  display_name: "GLM OCR PDF"
+  short_description: "Run local GLM-OCR for scanned PDFs and image-heavy docs"
+  default_prompt: "Use $glm-ocr-pdf to OCR this scanned PDF and return clean Markdown plus any extracted tables."
+policy:
+  allow_implicit_invocation: true
