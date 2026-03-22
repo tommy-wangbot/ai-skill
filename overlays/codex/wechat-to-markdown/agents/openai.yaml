@@ -1,0 +1,4 @@
+interface:
+  display_name: "WeChat to Markdown"
+  short_description: "Convert WeChat article URLs to Markdown with local images"
+  default_prompt: "Convert a WeChat public article link into a Markdown file and download all inline images to a local folder."

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chrome CDP"
+  short_description: "连接并操作本机已打开的 Chrome 标签页。"
+  default_prompt: "使用 $chrome-cdp 连接本机当前 Chrome 会话，先定位正确标签页，再按要求检查或操作页面，并简洁返回结果。"
+policy:
+  allow_implicit_invocation: true

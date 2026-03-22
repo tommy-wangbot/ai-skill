@@ -1,0 +1,8 @@
+# Generated distribution output — run scripts/sync-skills.sh locally
+dist/
+
+# OS
+.DS_Store
+
+# Node
+node_modules/

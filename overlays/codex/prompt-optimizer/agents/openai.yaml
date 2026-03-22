@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Optimizer"
+  short_description: "Optimize prompts into robust, low-ambiguity instructions."
+  default_prompt: "Use $prompt-optimizer to optimize this prompt and return two paste-ready Chinese versions: a long robust version and a short compact version."
