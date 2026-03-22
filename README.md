@@ -2,7 +2,7 @@
 
 > 🧠 跨平台 AI Skills 统一仓库 | by [@tommy-wangbot](https://github.com/tommy-wangbot)
 
-本仓库收录了来自 Claude Code、Alma、OpenClaw、Codex 等多个 AI 平台的精选 Skills，经过分类整理后统一管理，支持通过 [SkillUse](https://skilluse.dev) 一键安装到任意 Agent 平台。
+本仓库收录了来自 Claude Code、Alma、OpenClaw、Codex、Cursor 等多个 AI 平台的精选 Skills，经过分类整理后统一管理，支持通过 [SkillUse](https://skilluse.dev) 一键安装到任意 Agent 平台。
 
 ---
 
@@ -31,9 +31,9 @@ skilluse install https://github.com/tommy-wangbot/ai-skill/tree/main/.claude/ski
 
 ---
 
-## 🗂️ Skills 目录
+## 🗂️ Skills 目录（共 30 个）
 
-### 一类：通用型（推荐全平台安装）
+### 一类：通用型 · 推荐全平台安装（14个）
 
 | Skill | 来源 | 功能描述 |
 |-------|------|---------|
@@ -52,7 +52,7 @@ skilluse install https://github.com/tommy-wangbot/ai-skill/tree/main/.claude/ski
 | `self-improving-agent` | OpenClaw | 持续捕获错误和改进经验 |
 | `prompt-optimizer` | Codex | 将模糊 Prompt 优化为稳定可靠的指令 |
 
-### 二类：内容处理型（按需安装）
+### 二类：内容处理型 · 按需安装（10个）
 
 | Skill | 来源 | 功能描述 |
 |-------|------|---------|
@@ -67,14 +67,25 @@ skilluse install https://github.com/tommy-wangbot/ai-skill/tree/main/.claude/ski
 | `slides` | Codex | 创建和编辑 .pptx 演示文稿 |
 | `skywork-document` | Codex | 通过 Skywork API 生成多格式文档 |
 
+### 三类：开发工具型 · 编码 Agent 专用（6个）
+
+| Skill | 来源 | 功能描述 |
+|-------|------|---------|
+| `chrome-cdp` | Codex | 通过 Chrome DevTools Protocol 控制本地浏览器 |
+| `apify-data-pipeline` | Codex | Apify Actor 数据爬取与本地存储管道 |
+| `create-skill` | Cursor | 在 Cursor 中快速创建新 Skill |
+| `create-rule` | Cursor | 在 Cursor 中创建项目规则文件 |
+| `create-subagent` | Cursor | 创建独立子 Agent 处理复杂任务 |
+| `shell` | Cursor | 安全的 Shell 命令执行封装 |
+
 ---
 
 ## 🌐 支持的 Agent 平台
 
-通过 `skilluse agent <platform>` 切换平台，Skills 自动适配：
+通过 `skilluse agent <platform>` 切换平台，Skills 自动适配格式：
 
-| 平台 | 命令 |
-|------|------|
+| 平台 | 切换命令 |
+|------|---------|
 | Claude Code | `skilluse agent claude` |
 | Cursor | `skilluse agent cursor` |
 | Windsurf | `skilluse agent windsurf` |
@@ -85,17 +96,20 @@ skilluse install https://github.com/tommy-wangbot/ai-skill/tree/main/.claude/ski
 ## 🔄 常用命令
 
 ```bash
-# 查看所有可用 skill
+# 查看仓库内所有可用 skill
 skilluse repo skills
 
 # 搜索 skill
 skilluse search <keyword>
 
-# 更新已安装的 skill
+# 更新已安装的所有 skill
 skilluse upgrade
 
 # 卸载 skill
 skilluse uninstall <skill-name>
+
+# 查看 skill 详情
+skilluse info <skill-name>
 ```
 
 ---
