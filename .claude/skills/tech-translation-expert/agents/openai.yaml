@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tech Translation Expert"
+  short_description: "Natural Chinese translation for English tech content"
+  default_prompt: "Translate the provided English technical text into natural Chinese using the skill workflow and output only the final polished translation."
