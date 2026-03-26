@@ -36,37 +36,66 @@ async def download_book(client: TelegramClient, entity, query: str, target_forma
         # 场景二：收到搜索结果（带有 Inline Buttons）
         # 注意：ZLib bot 的分页按钮没必要阻挡后续纯文本分析
         if msg.buttons:
-            for row in msg.buttons:
-                for button in row:
-                    text_lower = button.text.lower()
-                    if target_format.lower() in text_lower:
-                        # 尝试提取大小
-                        size_match = re.search(r'(\d+(\.\d+)?\s?[mM][bB])', button.text)
-                        size_str = size_match.group(1) if size_match else "未知大小"
-                        print(f"📚 选择: {target_format} ({size_str})")
-                        print("📥 请求下载...")
-                        await button.click()
-                        return  # 按钮点击后退出，等待文件
-            
-            # 如果没找到按钮格式，打印一下按钮，但不要 return，让它继续走纯文本解析
-            print("💬 存在附加按钮：", [b.text for r in msg.buttons for b in r])
+            all_buttons = [b for row in msg.buttons for b in row]
+            fallback_button = None
+
+            for button in all_buttons:
+                text_lower = button.text.lower()
+                if target_format.lower() in text_lower:
+                    # 找到目标格式，直接点击
+                    size_match = re.search(r'(\d+(\.\d+)?\s?[mM][bB])', button.text)
+                    size_str = size_match.group(1) if size_match else "未知大小"
+                    print(f"📚 选择: {target_format} ({size_str})")
+                    print("📥 请求下载...")
+                    await button.click()
+                    return
+                # 记录第一个含下载格式关键词的按钮作为备选
+                if fallback_button is None and re.search(r'\b(pdf|mobi|fb2|djvu|azw3?|txt|zip)\b', text_lower):
+                    fallback_button = button
+
+            # 目标格式不存在，启用备选格式
+            if fallback_button:
+                size_match = re.search(r'(\d+(\.\d+)?\s?[mM][bB])', fallback_button.text)
+                size_str = size_match.group(1) if size_match else "未知大小"
+                print(f"⚠️  未找到 {target_format}，改用备选格式: {fallback_button.text.strip()} ({size_str})")
+                print("📥 请求下载...")
+                await fallback_button.click()
+                return
+
+            # 没有任何下载按钮，继续走纯文本解析
+            print("💬 存在附加按钮：", [b.text for b in all_buttons])
             
         # 场景三：收到纯文本形式的结果列表
         if msg.text and '/book' in msg.text:
             lines = msg.text.split('\n')
-            for i, line in enumerate(lines):
-                # 寻找包含目标格式的行 (例如: /book16311280_c2126e (epub, 1.08 MB))
-                if target_format.lower() in line.lower() and ('/book' in line or '/zlib' in line):
-                    # 匹配下载指令，如 /book16311280_c2126e
-                    match = re.search(r'(/[\w\d_]+)', line)
-                    if match:
-                        command = match.group(1)
-                        print(f"📚 选择: 匹配项 -> {command}")
-                        print("📥 请求下载...")
-                        await client.send_message(entity, command)
-                        return
-                        
-            print(f"❌ 文字结果中未找到 {target_format} 格式的选项。")
+            fallback_command = None
+
+            for line in lines:
+                if '/book' not in line and '/zlib' not in line:
+                    continue
+                match = re.search(r'(/[\w\d_]+)', line)
+                if not match:
+                    continue
+                command = match.group(1)
+                if target_format.lower() in line.lower():
+                    # 找到目标格式，直接发送
+                    print(f"📚 选择: {target_format} -> {command}")
+                    print("📥 请求下载...")
+                    await client.send_message(entity, command)
+                    return
+                # 记录第一个可用格式行作为备选
+                if fallback_command is None:
+                    fallback_command = (command, line.strip())
+
+            # 目标格式不存在，启用备选格式
+            if fallback_command:
+                command, desc = fallback_command
+                print(f"⚠️  未找到 {target_format}，改用备选: {desc}")
+                print("📥 请求下载...")
+                await client.send_message(entity, command)
+                return
+
+            print(f"❌ 文字结果中未找到任何可下载格式。")
             if not file_received.done():
                 file_received.set_result(None)
             return
@@ -108,6 +137,4 @@ async def main():
     await client.disconnect()
 
 if __name__ == '__main__':
-    # 为了避免在某些系统下事件循环问题，用 run_until_complete 包起来
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    asyncio.run(main())
