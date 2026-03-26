@@ -50,9 +50,9 @@ cd ~/ai-skill
 
 ---
 
-## Skills 目录（共 44 个）
+## Skills 目录（共 60 个）
 
-### 一类：通用型 · 推荐全平台安装（16个）
+### 一类：通用型 · 推荐全平台安装（19个）
 
 | Skill | 功能描述 |
 |-------|---------|
@@ -72,8 +72,11 @@ cd ~/ai-skill
 | `prompt-optimizer` | 将模糊 Prompt 优化为稳定可靠的指令 |
 | `gstack-office-hours` | YC Office Hours 模式：创业逼问 / Builder 头脑风暴 |
 | `gstack-retro` | 周度工程复盘：commit 分析、工作模式、代码质量趋势 |
+| `brainstorming` | 创意发散：功能设计前强制探索用户意图与需求 |
+| `dispatching-parallel-agents` | 多 Agent 并行调度，处理相互独立的子任务 |
+| `using-superpowers` | 对话启动时自动发现和调用可用 Skills |
 
-### 二类：内容处理型 · 按需安装（16个）
+### 二类：内容处理型 · 按需安装（17个）
 
 | Skill | 来源 | 功能描述 |
 |-------|------|---------|
@@ -93,12 +96,14 @@ cd ~/ai-skill
 | `skywork-document` | Codex | 通过 Skywork API 生成多格式文档 |
 | `notebooklm` | 社区 | 桥接 Google NotebookLM，source-grounded 引用级回答 |
 | `asr` | ListenHub | 本地语音转文字，sensevoice 模型，无需 API Key |
+| `qiao-epub-bot` | 社区 | Telegram Z-Lib Bot 电子书下载，默认 epub，自动备选格式 |
 
-### 三类：开发工具型 · 编码 Agent 专用（12个）
+### 三类：开发工具型 · 编码 Agent 专用（24个）
 
 | Skill | 来源 | 功能描述 |
 |-------|------|---------|
 | `chrome-cdp` | Codex | Chrome DevTools Protocol 本地浏览器控制 |
+| `opencli` | jackwener | 50+ 网站/App 适配器，CDP 驱动，复用 Chrome 登录态 |
 | `apify-data-pipeline` | Codex | Apify Actor 数据爬取与本地存储管道 |
 | `glm-ocr-pdf` | 本机 | PDF 双模路由：原生提取 + 本机 GLM-OCR（Apple Silicon）|
 | `gstack-review` | garrytan | PR 落地前代码审查：SQL 安全、LLM 信任边界、条件副作用 |
@@ -110,6 +115,17 @@ cd ~/ai-skill
 | `obsidian-cli` | kepano | Obsidian vault 读写、搜索、任务管理、插件调试 |
 | `obsidian-markdown` | kepano | Obsidian 风格 Markdown（callouts/embeds/properties）|
 | `obsidian-bases` | kepano | Obsidian Bases 数据库视图，含 FUNCTIONS_REFERENCE |
+| `test-driven-development` | 社区 | 测试驱动开发，先写测试再写实现 |
+| `systematic-debugging` | 社区 | 遇到 bug 时的系统化调试流程 |
+| `writing-plans` | 社区 | 多步任务开始前先写实施计划 |
+| `writing-skills` | 社区 | 新建或编辑 Skill，部署前验证 |
+| `executing-plans` | 社区 | 在独立会话中执行已写好的实施计划 |
+| `subagent-driven-development` | 社区 | 用独立子 Agent 并行执行实施计划 |
+| `using-git-worktrees` | 社区 | 创建隔离的 git worktree 进行功能开发 |
+| `requesting-code-review` | 社区 | 完成实现后请求代码审查 |
+| `receiving-code-review` | 社区 | 收到代码审查反馈后的处理流程 |
+| `verification-before-completion` | 社区 | 声称完成前必须运行验证命令确认结果 |
+| `finishing-a-development-branch` | 社区 | 开发完成后的分支整合决策指引 |
 
 ---
 
