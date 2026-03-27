@@ -50,7 +50,7 @@ cd ~/ai-skill
 
 ---
 
-## Skills 目录（共 60 个）
+## Skills 目录（共 68 个）
 
 ### 一类：通用型 · 推荐全平台安装（19个）
 
@@ -97,6 +97,19 @@ cd ~/ai-skill
 | `notebooklm` | 社区 | 桥接 Google NotebookLM，source-grounded 引用级回答 |
 | `asr` | ListenHub | 本地语音转文字，sensevoice 模型，无需 API Key |
 | `qiao-epub-bot` | 社区 | Telegram Z-Lib Bot 电子书下载，默认 epub，自动备选格式 |
+
+### 二·五类：咨询与研究型 · ljg 系列（8个）
+
+| Skill | 来源 | 功能描述 |
+|-------|------|---------|
+| `ljg-rank` | lijigang | 降秩引擎：给领域找出底层独立驱动力，砍到不可再少的生成器 |
+| `ljg-roundtable` | lijigang | 圆桌讨论：以求真为目标的结构化多人辩证对话框架 |
+| `ljg-paper` | lijigang | 论文阅读器：为非学术人士提取论文洞察，重理解不重批判 |
+| `ljg-invest` | lijigang | 投资/行业分析：判断项目是否是"秩序创造机器" |
+| `ljg-writes` | lijigang | 写作引擎：带着一个观点出发，在写的过程中把它想透 |
+| `ljg-learn` | lijigang | 概念解剖：从8个维度切开一个概念，压成一句顿悟 |
+| `ljg-plain` | lijigang | 白话引擎：把任何内容改写到聪明的十二岁小孩也能懂 |
+| `ljg-card` | lijigang | 内容铸卡：将内容转为 PNG 视觉卡片（需 Playwright）|
 
 ### 三类：开发工具型 · 编码 Agent 专用（24个）
 
