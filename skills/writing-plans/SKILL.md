@@ -1,6 +1,6 @@
 ---
 name: writing-plans
-description: Use when you have a spec or requirements for a multi-step task, before touching code
+description: 制定多步骤任务的详细执行计划，将复杂任务拆解为可操作步骤。适用于编码项目、咨询方案规划、研究项目设计、工作流设计等。触发词：帮我规划、制定计划、拆解任务、制定方案步骤、怎么推进、任务拆解、项目计划。
 ---
 
 # Writing Plans

@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+description: "头脑风暴与创意探索，将模糊想法转化为清晰方案。适用于产品设计、功能构思、咨询方案设计、研究框架规划等场景。触发词：我有个想法、帮我想想、设计一个方案、brainstorm、我想做一个、帮我构思、idea探索、怎么设计。"
 ---
 
 # Brainstorming Ideas Into Designs

@@ -1,6 +1,6 @@
 ---
 name: tech-translation-expert
-description: 模仿宝玉（@dotey）的翻译风格，通过“三步翻译法”思维链，将英文技术内容转化为地道、去 AI 味的中文。
+description: 将英文技术内容翻译为地道中文，模仿宝玉（@dotey）三步翻译法，去除 AI 腔，保持技术准确性。触发词：翻译、translate、把这段英文翻译、技术文章翻译、帮我翻译、翻译一下、中文翻译。
 ---
 
 ## 核心翻译原则

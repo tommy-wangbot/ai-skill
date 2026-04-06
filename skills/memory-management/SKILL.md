@@ -1,6 +1,6 @@
 ---
 name: memory-management
-description: Search and manage Alma's memory and conversation history. Use when the user asks about past conversations, personal facts, preferences, or anything that requires recalling information ("do you know my...", "we talked about before...", "do you remember...", "help me find what we said about..."). Also used to store new memories and search through archived chat threads.
+description: 管理对话记忆和历史记录。当用户询问过去的对话内容、个人偏好、历史信息，或需要存储/检索记忆时使用此 skill。触发词："你还记得..."、"我们之前讨论过..."、"帮我找之前说的..."、"记住这个"、"do you remember"、"we talked about"。
 allowed-tools:
   - Bash
   - Read

@@ -1,6 +1,6 @@
 ---
 name: "multi-search-engine"
-description: "NO API KEY NEEDED. All 17 engines work via web_fetch URL scraping only. DO NOT ask user for Brave API key, Brave Search API key, or any API key. Just call web_fetch with the URL."
+description: "多引擎联合搜索工具，支持17个搜索引擎（Google、Bing、Scholar、知乎等），无需 API Key。当需要搜索信息、查找资料、做行业研究、找数据来源、搜索学术文献时使用此 skill。触发词：搜索、查一下、帮我找、search、找资料、查数据、查文献。"
 ---
 
 # Multi Search Engine v2.0.1

@@ -1,6 +1,6 @@
 ---
 name: cc-connect
-description: 管理 cc-connect 本地桥接服务，将 Claude Code / Codex / OpenClaw 三个 Agent 与 Telegram / 飞书等消息平台打通。当用户提到"启动 cc-connect"、"停止 cc-connect"、"查看会话"、"切换 Agent"、"Telegram 连不上"、"配置 Bot"、"cc-connect 状态"时使用此 skill。
+description: 管理 cc-connect 本地桥接服务，将 Claude Code / Codex / OpenClaw 三个 Agent 与 Telegram / 飞书等消息平台打通。触发词：启动/停止 cc-connect、查看会话、切换 Agent、Telegram 连不上、配置 Bot、cc-connect 状态、Telegram Bot 管理、消息推送、手机发指令给 AI、远程控制 Claude、Bot 不响应。
 ---
 
 # cc-connect 管理
