@@ -17,7 +17,7 @@ ai-skill/
 │   └── ...
 ├── overlays/                # 平台专属补丁（同名文件覆盖公共内容）
 │   ├── codex/               # agents/openai.yaml
-│   └── openclaw/            # .clawhub/ + _meta.json + hooks/ + scripts/
+│   └── hermes/              # hermes 专属配置
 ├── dist/                    # ⚠️ 生成产物，已 gitignore，勿手动编辑
 ├── scripts/
 │   └── sync-skills.sh       # 合并 + 分发脚本
@@ -39,20 +39,20 @@ cd ~/ai-skill
 # 3. 只同步某个平台
 ./scripts/sync-skills.sh claude
 ./scripts/sync-skills.sh codex
-./scripts/sync-skills.sh openclaw
+./scripts/sync-skills.sh hermes
 ```
 
 | 平台 | 运行时目录 |
 |------|-----------|
 | Claude Code | `~/.claude/skills/` |
 | Codex | `~/.codex/skills/` |
-| OpenClaw | `~/clawd/skills/` |
+| Hermes | `~/.hermes/skills/` |
 
 ---
 
-## Skills 目录（共 68 个）
+## Skills 目录（共 72 个）
 
-### 一类：通用型 · 推荐全平台安装（19个）
+### 一类：通用型 · 推荐全平台安装（21个）
 
 | Skill | 功能描述 |
 |-------|---------|
@@ -75,6 +75,8 @@ cd ~/ai-skill
 | `brainstorming` | 创意发散：功能设计前强制探索用户意图与需求 |
 | `dispatching-parallel-agents` | 多 Agent 并行调度，处理相互独立的子任务 |
 | `using-superpowers` | 对话启动时自动发现和调用可用 Skills |
+| `fireworks-tech-graph` | 生成生产级 SVG+PNG 技术图表，14种图类 + 7种视觉风格 |
+| `diagram-generator` | 多格式图表生成：Draw.io / Mermaid / Excalidraw（需 MCP）|
 
 ### 二类：内容处理型 · 按需安装（17个）
 
@@ -95,10 +97,10 @@ cd ~/ai-skill
 | `xlsx` | Anthropic | 电子表格读写、公式、图表（python-openpyxl）|
 | `skywork-document` | Codex | 通过 Skywork API 生成多格式文档 |
 | `notebooklm` | 社区 | 桥接 Google NotebookLM，source-grounded 引用级回答 |
-| `asr` | ListenHub | 本地语音转文字，sensevoice 模型，无需 API Key |
+| `interview-transcription` | 本机 | 访谈音频转写全流程：ASR 路线选择 + 说话人分离 + 整理 |
 | `qiao-epub-bot` | 社区 | Telegram Z-Lib Bot 电子书下载，默认 epub，自动备选格式 |
 
-### 二·五类：咨询与研究型 · ljg 系列（8个）
+### 二·五类：咨询与研究型（9个）
 
 | Skill | 来源 | 功能描述 |
 |-------|------|---------|
@@ -110,13 +112,15 @@ cd ~/ai-skill
 | `ljg-learn` | lijigang | 概念解剖：从8个维度切开一个概念，压成一句顿悟 |
 | `ljg-plain` | lijigang | 白话引擎：把任何内容改写到聪明的十二岁小孩也能懂 |
 | `ljg-card` | lijigang | 内容铸卡：将内容转为 PNG 视觉卡片（需 Playwright）|
+| `doc-qa` | 本机 | 文稿快校：问题驱动，只输出实际存在的问题，按优先级排列 |
 
-### 三类：开发工具型 · 编码 Agent 专用（24个）
+### 三类：开发工具型 · 编码 Agent 专用（25个）
 
 | Skill | 来源 | 功能描述 |
 |-------|------|---------|
 | `chrome-cdp` | Codex | Chrome DevTools Protocol 本地浏览器控制 |
 | `opencli` | jackwener | 50+ 网站/App 适配器，CDP 驱动，复用 Chrome 登录态 |
+| `cc-connect` | 本机 | 管理 cc-connect 本地桥接服务，将 Claude Code 接入外部工具链 |
 | `apify-data-pipeline` | Codex | Apify Actor 数据爬取与本地存储管道 |
 | `glm-ocr-pdf` | 本机 | PDF 双模路由：原生提取 + 本机 GLM-OCR（Apple Silicon）|
 | `gstack-review` | garrytan | PR 落地前代码审查：SQL 安全、LLM 信任边界、条件副作用 |
@@ -147,8 +151,7 @@ cd ~/ai-skill
 | Overlay | 文件 | 用途 |
 |---------|------|------|
 | `overlays/codex/` | `agents/openai.yaml` | Codex Agent 模型与工具配置（7 个 skill）|
-| `overlays/openclaw/` | `.clawhub/`, `_meta.json` | OpenClaw Hub 元数据（3 个 skill）|
-| | `.learnings/`, `hooks/`, `scripts/` | OpenClaw 自学习与 Hook 系统 |
+| `overlays/hermes/` | hermes 专属配置 | Hermes 分类目录结构适配 |
 
 ---
 
