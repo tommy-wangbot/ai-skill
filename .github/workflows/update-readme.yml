@@ -1,0 +1,37 @@
+name: Auto-update README skills table
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**/SKILL.md"
+      - "scripts/skill_categories.yaml"
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate README skills section
+        run: python scripts/generate_readme.py
+
+      - name: Commit updated README
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "docs: auto-update skills table [skip ci]"
+          git push

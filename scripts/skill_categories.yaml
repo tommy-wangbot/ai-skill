@@ -1,0 +1,93 @@
+# skill 分类配置
+# 新增 skill 后只需在此处归类，README 会自动更新
+# 未出现在任何分类中的 skill 会自动归入「未分类」
+
+categories:
+
+  通用型:
+    label: "一类：通用型 · 推荐全平台安装"
+    skills:
+      - commit
+      - epic
+      - issue
+      - publish
+      - plan-mode
+      - todo
+      - tasks
+      - memory-management
+      - web-search
+      - web-fetch
+      - find-skills
+      - multi-search-engine
+      - self-improving-agent
+      - prompt-optimizer
+      - gstack-office-hours
+      - gstack-retro
+      - brainstorming
+      - dispatching-parallel-agents
+      - using-superpowers
+      - fireworks-tech-graph
+      - diagram-generator
+
+  内容处理型:
+    label: "二类：内容处理型 · 按需安装"
+    skills:
+      - baoyu-translate
+      - tech-translation-expert
+      - baoyu-format-markdown
+      - baoyu-url-to-markdown
+      - baoyu-danger-x-to-markdown
+      - baoyu-youtube-transcript
+      - wechat-to-markdown
+      - jina-cli
+      - defuddle
+      - doc
+      - doc-coauthoring
+      - slides
+      - xlsx
+      - skywork-document
+      - notebooklm
+      - interview-transcription
+      - qiao-epub-bot
+
+  咨询与研究型:
+    label: "二·五类：咨询与研究型"
+    skills:
+      - ljg-rank
+      - ljg-roundtable
+      - ljg-paper
+      - ljg-invest
+      - ljg-writes
+      - ljg-learn
+      - ljg-plain
+      - ljg-card
+      - doc-qa
+
+  开发工具型:
+    label: "三类：开发工具型 · 编码 Agent 专用"
+    skills:
+      - chrome-cdp
+      - opencli
+      - cc-connect
+      - apify-data-pipeline
+      - glm-ocr-pdf
+      - gstack-review
+      - create-skill
+      - create-rule
+      - create-subagent
+      - shell
+      - json-canvas
+      - obsidian-cli
+      - obsidian-markdown
+      - obsidian-bases
+      - test-driven-development
+      - systematic-debugging
+      - writing-plans
+      - writing-skills
+      - executing-plans
+      - subagent-driven-development
+      - using-git-worktrees
+      - requesting-code-review
+      - receiving-code-review
+      - verification-before-completion
+      - finishing-a-development-branch
